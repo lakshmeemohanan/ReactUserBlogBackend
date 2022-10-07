@@ -26,11 +26,10 @@ app.use('/api/users', usersRoutes);
 app.use((req, res, next) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
-
-/*app.use((req, res, next) => {
-    const error = new HttpError('Could not find this route', 404);
-    return next(error);
-});*/
+//app.use((req, res, next) => {
+//    const error = new HttpError('Could not find this route', 404);
+ //   return next(error);
+//});
 
 app.use((error, req, res, next) => {
     if (req.file) {
